@@ -1,0 +1,11 @@
+[master_node_1]
+node01 ansible_host=192.168.50.2 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node0/virtualbox/private_key
+
+[master_node_2]
+node02 ansible_host=192.168.50.3 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node1/virtualbox/private_key
+
+[master_node_3]
+node03 ansible_host=192.168.50.4 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node2/virtualbox/private_key
+
+[data_node_1]
+node04 ansible_host=192.168.50.5 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node3/virtualbox/private_key
