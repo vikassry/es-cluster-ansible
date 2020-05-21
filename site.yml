@@ -1,0 +1,10 @@
+---
+    
+- hosts: master_nodes
+  roles:
+    - role: elastic.elasticsearch
+
+
+- hosts: data_nodes
+  roles:
+    - role: elastic.elasticsearch

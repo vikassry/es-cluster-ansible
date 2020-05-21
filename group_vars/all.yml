@@ -1,0 +1,5 @@
+---
+es_major_version: "7.x"
+es_version: "7.6.0"
+es_heap_size: "128m"
+es_cluster_name: "production"

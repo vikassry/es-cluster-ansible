@@ -1,0 +1,11 @@
+---
+es_config:
+  cluster.initial_master_nodes: "{{ groups['master_nodes'] | map('extract', hostvars, ['ansible_eth1', 'ipv4', 'address']) | join(',') }}"
+  cluster.name: "production"
+  network.host: "{{ ansible_eth1.ipv4.address }}, _local_"
+  discovery.seed_hosts: "{{ groups['master_nodes'] | map('extract', hostvars, ['ansible_eth1', 'ipv4', 'address']) | join(':9300,') }}"
+  http.port: 9200
+  transport.tcp.port: 9300
+  node.data: false
+  node.master: true
+  bootstrap.memory_lock: false
