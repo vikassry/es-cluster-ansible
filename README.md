@@ -12,7 +12,11 @@
 2. This playbook sets up a 4 node cluster and hence 4 vm entries are made in the Vagrantfile.
 3. Add or remove entries in the Vagrantfile based on your requirement
 4. Set the network of each vm to be a private network and assign an ip from the reserved space.
-5. Save the Vagrantfile and run vagrant up
+5. Run your vagrant file
+
+```
+vagrant up
+```
 
 #### Writing your playbook
 1.Set up your inventory first which will be the hosts file or inventory.yml
