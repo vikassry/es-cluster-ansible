@@ -21,11 +21,7 @@ Vagrant.configure("2") do |config|
     node2.vm.box = "hashicorp/bionic64"
     node2.vm.network "private_network", ip: "192.168.50.4"
   end
-
-  config.vm.define "node3" do |node3|
-    node3.vm.box = "hashicorp/bionic64"
-    node3.vm.network "private_network", ip: "192.168.50.5"
-  end
+  
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
