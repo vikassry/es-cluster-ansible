@@ -24,11 +24,10 @@ vagrant up
 ```
 [master_nodes]
 node01 ansible_host=192.168.50.2 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node0/virtualbox/private_key
-node02 ansible_host=192.168.50.3 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node1/virtualbox/private_key
-node03 ansible_host=192.168.50.4 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node2/virtualbox/private_key
 
 [data_nodes]
-node04 ansible_host=192.168.50.5 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node3/virtualbox/private_key
+node02 ansible_host=192.168.50.3 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node1/virtualbox/private_key
+node03 ansible_host=192.168.50.4 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node2/virtualbox/private_key
 ```
 2. From the VMs procured previously, group them into master_nodes and data_nodes as per your requirement.
 3. Give in your vm's host, username and private key files. Mentioned above is just a sample template.
