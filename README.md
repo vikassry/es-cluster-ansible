@@ -7,6 +7,12 @@
 2. vagrant v2.2.7
 3. ansible v2.9.6
 
+#### If you are new to Elasticsearch, I would recommend you to read the following articles before proceeding
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html, 
+https://www.elastic.co/pdf/architecture-best-practices.pdf
+
+
 #### Steps to procure VMs using Vagrant (Skip this if you already have VMs procured)
 1. Procure VMs using Vagrant . Number of VMs can differ based on requirement.
 2. This playbook sets up a 4 node cluster and hence 4 vm entries are made in the Vagrantfile.
