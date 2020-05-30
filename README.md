@@ -110,7 +110,7 @@ ansible-playbook -i ./hosts ./site.yml
 
 Once the ansible installation completes, your elasticsearch cluster is ready. To verify your cluster please hit the following url either in a browser window on your local system or using curl from one of the VMs.
 
-** http://<ip_address_of_one_node>/_cat/nodes?v **
+**http://<ip_address_of_one_node>/_cat/nodes?v**
 
 If the cluster has been successfully set up you should see something like this on the browser window.
 
