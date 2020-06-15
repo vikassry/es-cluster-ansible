@@ -15,7 +15,7 @@ https://www.elastic.co/pdf/architecture-best-practices.pdf
 
 #### Steps to procure VMs using Vagrant (Skip this if you already have VMs procured)
 1. Procure VMs using Vagrant . Number of VMs can differ based on requirement.
-2. This playbook sets up a 4 node cluster and hence 4 vm entries are made in the Vagrantfile.
+2. This playbook sets up a 3 node cluster and hence 3 vm entries are made in the Vagrantfile.
 3. Add or remove entries in the Vagrantfile based on your requirement
 4. Set the network of each vm to be a private network and assign an ip from the reserved space.
 5. Run your vagrant file
