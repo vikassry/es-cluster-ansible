@@ -122,10 +122,9 @@ If the cluster has been successfully set up you should see something like this o
 
 ip         | heap.percent | ram.percent | cpu | load_1m | load_5m | load_15m | node.role | master | name
 ---        |    ---       | ---         |    --- |  ---    |   ---   |  ---     |   ---     |    ---     |  --- |
-192.168.50.5 |  75        |     80      |      0      |   0.24  |  0.15    |   0.06    |    dil |    -   |   node04
-192.168.50.2 |     52     |     82      | 4  |    0.08 |   0.10 |    0.04 | ilm |    -  |     node01
-192.168.50.4 |     77     |     82      | 1  |  0.07  |   0.09  |    0.04 | ilm |   *   |     node03
-192.168.50.3 |     55     |     83 |   1 |    0.29 |   0.26 |  0.10 | ilm |   -   |    node02
+192.168.50.2 |     52     |     82      | 4  |    0.08 |   0.10 |    0.04 | ilm |    *  |     node01
+192.168.50.4 |     77     |     82      | 1  |  0.07  |   0.09  |    0.04 | dil |   -   |     node03
+192.168.50.3 |     55     |     83 |   1 |    0.29 |   0.26 |  0.10 | dil |   -   |    node02
 
 Here the node that is the current master will have the " * " set to the master column.
 
