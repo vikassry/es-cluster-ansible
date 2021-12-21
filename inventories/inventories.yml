@@ -1,0 +1,23 @@
+all:
+  children:
+    master_nodes:
+      hosts:
+        node01:
+          ansible_host: 192.168.50.2
+          ansible_user: vagrant
+          es_cluster_name: "UAT"
+          ansible_private_key_file: /Users/vikassuryavanshi/workspace/es-cluster-ansible/.vagrant/machines/node0/virtualbox/private_key
+    data_node_1:
+      hosts:
+        node02:
+          ansible_host: 192.168.50.3
+          ansible_user: vagrant
+          es_cluster_name: "UAT"
+          ansible_private_key_file: /Users/vikassuryavanshi/workspace/es-cluster-ansible/.vagrant/machines/node1/virtualbox/private_key
+    data_node_2:
+      hosts:
+        node03:
+          ansible_host: 192.168.50.4
+          ansible_user: vagrant
+          es_cluster_name: "UAT"
+          ansible_private_key_file: /Users/vikassuryavanshi/workspace/es-cluster-ansible/.vagrant/machines/node2/virtualbox/private_key

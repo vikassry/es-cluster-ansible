@@ -4,8 +4,8 @@
 
 ### Prerequisites
 1. virtualbox v6+
-2. vagrant v2.2.7
-3. ansible v2.9.6
+2. vagrant v2.2.19
+3. ansible v2.12.1
 
 #### If you are new to Elasticsearch, I would recommend you to read the following articles before proceeding
 
@@ -29,18 +29,20 @@ vagrant up
 
 ```
 [master_nodes]
-node01 ansible_host=192.168.50.2 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node0/virtualbox/private_key
+node01 ansible_host=192.168.50.2 ansible_user=vagrant ansible_private_key_file=/Users/vikassuryavanshi/workspace/es-cluster-ansible/.vagrant/machines/node0/virtualbox/private_key
 
 [data_nodes]
-node02 ansible_host=192.168.50.3 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node1/virtualbox/private_key
-node03 ansible_host=192.168.50.4 ansible_user=vagrant ansible_private_key_file=/Users/aravindvvaideesh/elastic-ansible/.vagrant/machines/node2/virtualbox/private_key
+node02 ansible_host=192.168.50.3 ansible_user=vagrant ansible_private_key_file=/Users/vikassuryavanshi/workspace/es-cluster-ansible/.vagrant/machines/node1/virtualbox/private_key
+node03 ansible_host=192.168.50.4 ansible_user=vagrant ansible_private_key_file=/Users/vikassuryavanshi/workspace/es-cluster-ansible/.vagrant/machines/node2/virtualbox/private_key
 ```
 2. From the VMs procured previously, group them into master_nodes and data_nodes as per your requirement.
 3. Give in your vm's host, username and private key files. Mentioned above is just a sample template.
 4. Import elasticsearch role using ansible-galaxy
 
 ```
-ansible-galaxy install elastic.elasticsearch,7.7.0
+ansible-galaxy install -r requirements.yml --force
+OR
+ansible-galaxy install elastic.elasticsearch,7.16.2
 ```
 
 5. Now that you have the role imported, set up your site.yml using the imported role
@@ -63,7 +65,7 @@ ansible-galaxy install elastic.elasticsearch,7.7.0
 **group_vars/all.yml**
 ```
 es_major_version: "7.x"
-es_version: "7.6.0"
+es_version: "7.16.2"
 es_heap_size: "128m"
 es_cluster_name: "production"
 
@@ -106,16 +108,25 @@ es_config:
  
 Ensure to modify the config variables as per your requirement. Notice the **node.data** and **node.master** variables changes for the respective groups. 
 
+
+
 #### Running your playbook
 
 ```
 ansible-playbook -i ./hosts ./site.yml
 ```
 
+Incase you face issue regarding downloading any ubuntu packages, then do below for all nodes
+```
+e.g vagrant ssh node0
+sudo apt-get update (inside every node)
+```
 
 Once the ansible installation completes, your elasticsearch cluster is ready. To verify your cluster please hit the following url either in a browser window on your local system or using curl from one of the VMs.
 
 **http://<ip_address_of_one_node>/_cat/nodes?v**
+e.g: curl http://localhost:9200/_cat/nodes?v
+curl http://localhost:9200/ (to see ES version and other metadata)
 
 If the cluster has been successfully set up you should see something like this on the browser window.
 
